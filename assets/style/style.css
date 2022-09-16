@@ -1,1 +1,30 @@
-/* BASIC STYLES HERE */
+:root {
+  --my-dark: rgb(25, 25, 25);
+  --my-dark-opac: rgb(25, 25, 25, 0.5);
+  --my-dark-lighten-opac: rgb(48, 48, 48, 0.7);
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--my-dark);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px var(--my-dark), 0px 0px 4px rgba(203, 144, 34, 0.686);
+  color: antiquewhite;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+.weather-card {
+  background-color: var(--my-dark-opac);
+  border-radius: 4%;
+  padding: 0.2rem 0.5rem 0 0.5rem;
+}
+
+.weather-card:hover {
+  cursor: pointer;
+  background-color: var(--my-dark-lighten-opac);
+  box-shadow: 0 0 0.15rem 0.25rem var(--my-dark-opac);
+}

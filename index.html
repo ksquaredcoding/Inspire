@@ -12,34 +12,40 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/6.9.96/css/materialdesignicons.min.css">
   <title>Inspire</title>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">Inspire</span>
-      </a>
-    </nav>
-  </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+    <nav class="navbar">
+      <div class="container-fluid d-flex">
+        <span class="navbar-brand mb-0 h1"></span>
+        <div id="weather" class="justify-content-end text-center weather-card"
+          onclick="app.weathersController.changeWeather()">
+
         </div>
       </div>
-    </div>
+    </nav>
+  </header>
+  <main class="container-fluid">
+    <section class="d-flex">
+      <div id="clock" class="text-shadow"></div>
+    </section>
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
-    </div>
+  <footer>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+          <p class="text-shadow">Image By: <span id="copyright"></span></p>
+        </div>
+      </div>
+    </section>
   </footer>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js'
+    integrity='sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=='
+    crossorigin='anonymous' referrerpolicy='no-referrer'></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
