@@ -1,11 +1,12 @@
 import { appState } from "../AppState.js"
+import { Weather } from "../Models/Weather.js"
 import { weathersService } from "../Services/WeathersService.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML, setText } from "../Utils/Writer.js"
 
 function _drawWeather() {
   let weather = appState.currentWeather
-  setHTML('weather', weather.Template)
+  setHTML('weatherTarget', weather.CelsiusTemplate)
 }
 
 export class WeathersController {
@@ -22,9 +23,9 @@ export class WeathersController {
     }
   }
   changeWeather() {
-    let F = appState.currentWeather.celsius * 1.8 + 32
-    let newTemp = `${F}`
-    setText('changeCF', newTemp)
-    setText('weather-type', 'F')
+    setHTML('weatherTarget', appState.currentWeather.FTemplate)
+  }
+  changeWeatherBack() {
+    setHTML('weatherTarget', appState.currentWeather.CelsiusTemplate)
   }
 }

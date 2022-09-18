@@ -8,6 +8,7 @@ export class Weather {
     this.icon = data.weather[0].icon
     this.img = `https://openweathermap.org/img/wn/${this.icon}.png`
     this.celsius = Math.round(this.temp - 273)
+    this.f = Math.round(this.celsius * 1.8 + 32)
   }
 
   getWeatherDesc(x) {
@@ -34,7 +35,7 @@ export class Weather {
       case 'Tornado':
         description += 'Foggy'
         break
-      case 'Clear': description += 'Clear Sky'
+      case 'Clear': description += 'Clear Skies'
         break
       case 'Clouds': description += 'Cloudy'
         break
@@ -42,13 +43,29 @@ export class Weather {
     return description
   }
   // TODO let me change back to Celsius
-  get Template() {
+  get CelsiusTemplate() {
     return /*html*/ `
-    <div class="d-flex flex-column text-shadow">
-      <p><span id="changeCF">${this.celsius}</span><span>&deg;</span><span id="weather-type">C</span></p>
-      <p>${this.getWeatherDesc(this.desc)}</p>
-      <img src="${this.img}" alt="${this.desc}">
+    <div id="weather" class="justify-content-end text-center weather-card"
+      onclick="app.weathersController.changeWeather()">
+      <div class="d-flex flex-column text-shadow">
+        <p><span>${this.celsius}</span><span>&deg;</span><span>C</span></p>
+        <p>${this.getWeatherDesc(this.desc)}</p>
+        <img src="${this.img}" alt="${this.desc}">
+      </div>
     </div>
     `
   }
+  get FTemplate() {
+    return /*html*/ `
+    <div id="weather" class="justify-content-end text-center weather-card"
+      onclick="app.weathersController.changeWeatherBack()">
+      <div class="d-flex flex-column text-shadow">
+        <p><span>${this.f}</span><span>&deg;</span><span>F</span></p>
+        <p>${this.getWeatherDesc(this.desc)}</p>
+        <img src="${this.img}" alt="${this.desc}">
+      </div>
+    </div>
+        `
+  }
+
 }
