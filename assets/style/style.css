@@ -28,3 +28,8 @@ body {
   background-color: var(--my-dark-lighten-opac);
   box-shadow: 0 0 0.15rem 0.25rem var(--my-dark-opac);
 }
+
+.grid-center {
+  display: grid;
+  align-content: flex-end;
+}

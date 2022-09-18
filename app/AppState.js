@@ -10,6 +10,8 @@ class AppState extends EventEmitter {
   backgroundPicture = null
   /** @type {import('./Models/Weather').Weather} */
   currentWeather = null
+  /** @type {import('./Models/Quote').Quote} */
+  quote = null
 }
 
 export const appState = new Proxy(new AppState(), {
