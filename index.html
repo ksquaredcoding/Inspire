@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/6.9.96/css/materialdesignicons.min.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css'>
   <title>Inspire</title>
 </head>
 
@@ -21,16 +22,31 @@
     <nav class="navbar">
       <div class="container-fluid d-flex">
         <span class="navbar-brand mb-0 h1"></span>
+        <div class="row justify-content-center form-row">
+          <div class="col-md-4 offset-1">
+
+            <form onsubmit="app.todosController.setUser()">
+              <div class="form-group d-flex">
+                <label for="user"></label>
+                <input type="text" name="user" required placeholder="Set User" class="form-control">
+                <button type="submit" class="btn btn-light mx-1">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
         <div id="weatherTarget">
 
         </div>
       </div>
     </nav>
   </header>
-  <section class="d-flex">
-    <div id="clock" class="text-shadow"></div>
+  <section class="d-flex justify-content-center">
+    <div id="clock" class="text-shadow fs-1"></div>
   </section>
   <main class="container-fluid grid-center">
+    <div id="todo-list" class="d-flex justify-content-end">
+
+    </div>
     <div class="row" id="quoteTarget">
 
     </div>

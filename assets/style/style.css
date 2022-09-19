@@ -17,7 +17,8 @@ body {
   letter-spacing: 0.05rem;
 }
 
-.weather-card {
+.weather-card,
+.todo-card {
   background-color: var(--my-dark-opac);
   border-radius: 4%;
   padding: 0.2rem 0.5rem 0 0.5rem;
@@ -32,4 +33,8 @@ body {
 .grid-center {
   display: grid;
   align-content: flex-end;
+}
+
+.form-row {
+  width: 80vw;
 }

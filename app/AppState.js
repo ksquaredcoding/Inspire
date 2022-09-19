@@ -12,6 +12,11 @@ class AppState extends EventEmitter {
   currentWeather = null
   /** @type {import('./Models/Quote').Quote} */
   quote = null
+  /** @type {import('./Models/Todo').Todo} */
+  todoList = null
+  /** @type {import('./Models/Task').Task[]} */
+  todoListTasks = []
+  user = 'kevin'
 }
 
 export const appState = new Proxy(new AppState(), {
