@@ -33,11 +33,14 @@ export class TodosController {
     }
   }
   async removeTask(id) {
-    try {
-      await todosService.removeTask(id)
-    } catch (error) {
-      console.error('[REMOVING TASK]', error)
-      Pop.error(error)
+    const yes = await Pop.confirm('Delete this task?')
+    if (yes) {
+      try {
+        await todosService.removeTask(id)
+      } catch (error) {
+        console.error('[REMOVING TASK]', error)
+        Pop.error(error)
+      }
     }
   }
   async addTask() {
